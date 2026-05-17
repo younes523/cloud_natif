@@ -1,23 +1,27 @@
 version: '3.9'
+
 services:
   db:
+    image: mongo:4.4
     container_name: db
-    image: mongo
+    restart: unless-stopped
     volumes:
-      - ./data:/data/db
+      - mongo_data:/data/db
     ports:
       - "27018:27017"
 
   stagiaires:
     build: ./stagiaire-service
     container_name: stagiaire-container
+    restart: unless-stopped
     ports:
       - "3001:3000"
     environment:
       MONGO_URL: mongodb://db:27017
       MONGO_DB: bdformation
       MONGO_COLLECTION: stagiaires
-    # volumes:
-    #   - /app/node_modules
     depends_on:
       - db
+
+volumes:
+  mongo_data:
