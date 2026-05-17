@@ -4,20 +4,23 @@ const MongoClient = require('mongodb').MongoClient;
 const app = express();
 const port = 3000;
 
-//const mongoUrl = 'mongodb://127.0.0.1:27018';
-const dbname = 'formation';
-const collname = "stagiaire";
+const mongoUrl = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017';
+const dbname = process.env.MONGO_DB || 'formation';
+const collname = process.env.MONGO_COLLECTION || 'stagiaire';
+
 let client;
 let collection;
 
 
 app.use(express.json());
 
+
 async function connection() {
-    client = new MongoClient('mongodb://db:27017');
+    client = new MongoClient(mongoUrl);
     await client.connect();
-    const db = client.db(dbname); // Replace with your database name
-    collection = db.collection(collname); // Replace with your collection name
+
+    const db = client.db(dbname);
+    collection = db.collection(collname);
 }
 
 app.get('/stagiaires', async (req, res) => {

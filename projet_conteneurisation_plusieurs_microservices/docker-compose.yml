@@ -13,7 +13,11 @@ services:
     container_name: stagiaire-container
     ports:
       - "3001:3000"
-    volumes:
-      - /app/node_modules
+    environment:
+      MONGO_URL: mongodb://db:27017
+      MONGO_DB: bdformation
+      MONGO_COLLECTION: stagiaires
+    # volumes:
+    #   - /app/node_modules
     depends_on:
       - db

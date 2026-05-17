@@ -1,0 +1,3 @@
+# Ignore local database data and container volumes
+**/data/
+**/journal/
