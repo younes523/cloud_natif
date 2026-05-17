@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  db:
+    container_name: db
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27018:27017"
+
+  stagiaires:
+    build: ./stagiaire-service
+    container_name: stagiaire-container
+    ports:
+      - "3001:3000"
+    volumes:
+      - /app/node_modules
+    depends_on:
+      - db

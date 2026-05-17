@@ -1,0 +1,53 @@
+{"teams": [
+      {
+        "id": 1,
+        "name": "Falcon United",
+        "country": "Saudi Arabia"
+      },
+      {
+        "id": 2,
+        "name": "Pyramid Stars",
+        "country": "Egypt"
+      },
+      {
+        "id": 3,
+        "name": "Cairo Lions",
+        "country": "Egypt"
+      },
+      {
+        "id": 4,
+        "name": "Desert Warriors",
+        "country": "Saudi Arabia"
+      },
+      {
+        "id": 5,
+        "name": "Dubai Knights",
+        "country": "UAE"
+      },
+      {
+        "id": 6,
+        "name": "Doha Falcons",
+        "country": "Qatar"
+      },
+      {
+        "id": 7,
+        "name": "Red Sea Sharks",
+        "country": "Saudi Arabia"
+      },
+      {
+        "id": 8,
+        "name": "Casablanca Eagles",
+        "country": "Morocco"
+      },
+      {
+        "id": 9,
+        "name": "Atlas Lions",
+        "country": "Morocco"
+      },
+      {
+        "id": 10,
+        "name": "Sahara Tigers",
+        "country": "Morocco"
+      }
+]
+}
