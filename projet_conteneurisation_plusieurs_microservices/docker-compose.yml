@@ -15,7 +15,7 @@ services:
     container_name: stagiaire-container
     restart: unless-stopped
     ports:
-      - "3001:3000"
+      - "127.0.0.1:3001:3000"
     environment:
       MONGO_URL: mongodb://db:27017
       MONGO_DB: bdformation
